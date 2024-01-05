@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shivam Raj's Website</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000; /* Set background color to black */
+            color: #fff; /* Set text color to white */
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        section {
+            transition: transform 0.5s ease-in-out;
+            margin-bottom: 30px;
+        }
+
+        section img {
+            width: 100%;
+            border-radius: 5px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        section img:hover {
+            transform: scale(1.1);
+        }
+
+        h2 {
+            color: #f90; /* Set heading color to gold */
+        }
+
+        .profile-image {
+            border-radius: 50%;
+            max-width: 200px;
+            margin: 0 auto;
+            display: block;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 5px;
+            color: #f90;
+        }
+
+        form input,
+        form textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+
+        form button {
+            background-color: #f90;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #e08000;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Shivam Raj</h1>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#CV">CV</a>
+            <a href="Papers">Papers</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <img src="your-image-url.jpg" alt="Your Name" class="profile-image">
+            <p>Welcome to my personal website. I am a passionate web developer...</p>
+        </section>
+        <section id="portfolio">
+            <h2>Portfolio</h2>
+            <div class="portfolio-item">
+                <img src="project1-image.jpg" alt="Project 1">
+                <p>Project 1: Description of the project...</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="project2-image.jpg" alt="Project 2">
+                <p>Project 2: Description of the project...</p>
+            </div>
+            <!-- Add more portfolio items as needed -->
+        </section>
+        <section id="CV">
+            <h2>CV</h2>
+            <!-- Add your CV content here -->
+        </section>
+        <section id="papers">
+            <h2>Papers</h2>
+            <!-- Add your Papers content here -->
+        </section>
+        <form id="contact" action="submit_form.php" method="POST">
+            <h2>Contact Me</h2>
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+            </div>
+            <button type="submit">Send Message</button>
+        </form>
+    </main>
+    <script>
+        // Smooth scroll to section
+        const smoothScroll = (target) => {
+            const targetElement = document.querySelector(target);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        };
+
+        // Add event listeners to navigation links
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault();
+                smoothScroll(link.getAttribute('href'));
+            });
+        });
+    </script>
+</body>
+</html>
+
